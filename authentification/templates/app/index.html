@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for message in messages %}
+
+<strong>{{message}}</strong>
+
+{% endfor %}
+  {% if user.is_authenticated %}
+    <h1 style=>Bonjour {{ user.firstname }} bienvenue sur Plateforme de Tontine  </h1>
+    <button type="submit"><a href="/logout" 
+
+>Se déconnecter</a></button>
+  {% else %}
+    <button type="submit"><a href="/register">S'inscrire</a></button>
+    <button type="submit"><a href="/login" >Se connecter</a></button>
+  {% endif %}
+{% endblock %}
+ 
+<style>
+  *{
+    
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Changer la police selon vos préférences */
+}
+
+/* Style pour le contenu à l'intérieur du block */
+/* Vous pouvez ajouter des styles spécifiques pour le contenu à l'intérieur du block si nécessaire */
+.block-content {
+    margin-top: 20px; /* Ajouter de l'espace en haut du contenu */
+    padding: 20px; /* Ajouter de l'espace autour du contenu */
+    background-color: #f7f7f7; /* Couleur de fond pour le contenu */
+    border-radius: 10px; /* Arrondir les coins */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajouter une ombre */
+}
+
+/* Style pour les titres */
+h1 {
+    font-size: 24px; /* Taille de la police */
+    margin-bottom: 10px; /* Ajouter de l'espace en bas du titre */
+}
+
+/* Style pour les boutons */
+button {
+    background-color: #007bff; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Ajouter de l'espace à l'intérieur du bouton */
+    border: none; /* Supprimer la bordure */
+    border-radius: 5px; /* Arrondir les coins */
+    cursor: pointer; /* Ajouter un curseur au survol */
+    text-decoration: none; /* Supprimer la décoration du texte */
+    transition: background-color 0.3s; /* Ajouter une transition en cas de changement de couleur */
+}
+
+button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+/* Style pour les liens à l'intérieur des boutons */
+button a {
+    color: #fff; /* Couleur du texte */
+    text-decoration: none; /* Supprimer la décoration du texte */
+}
+
+button a:hover {
+    color: #fff; /* Couleur du texte au survol */
+    text-decoration: none; /* Supprimer la décoration du texte */
+}
+
+
+  }
+</style>

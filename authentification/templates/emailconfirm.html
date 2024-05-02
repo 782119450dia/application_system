@@ -1,0 +1,65 @@
+{% autoescape off %}
+Bienvenu sur donald pro login system
+Bonjour {{ name }}
+Confirmer votre address email en clickant sur le lien suivant.
+
+lien: https//{{ domain }}{% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}
+
+  <style>
+    *{
+        /* Styles généraux */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Titre */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Paragraphe */
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Lien */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Bouton */
+.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+    }
+  </style>

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<h2>Se Connecter ici</h2>
+
+{% for message in messages %}
+<strong>{{message}}</strong>
+{% endfor %}
+
+{% for message in messages %}
+<strong>{{message}}</strong>
+
+{% endfor %}
+<form method="post" action="/login">
+       {% csrf_token %}
+    <label for="username">username</label>
+    <input type="text" name="username" id="username" placeholder="Enter ton username" required>
+    <br>
+    <label for="password">password</label>
+    <input type="password" name="password" id="password" placeholder="Enter ton password" required>
+    <br>
+    <button type="submit" >Connecter</button>
+</form>   
+{% endblock %}
+   <!-- Styles générau--->
+   <style>
+    *{
+        
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Changer la police selon vos préférences */
+}
+
+/* Style pour le contenu à l'intérieur du block */
+.block-content {
+    margin-top: 20px; /* Ajouter de l'espace en haut du contenu */
+    padding: 20px; /* Ajouter de l'espace autour du contenu */
+    background-color: #f7f7f7; /* Couleur de fond pour le contenu */
+    border-radius: 10px; /* Arrondir les coins */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajouter une ombre */
+}
+
+/* Style pour les titres */
+h2 {
+    font-size: 24px; /* Taille de la police */
+    margin-bottom: 20px; /* Ajouter de l'espace en bas du titre */
+}
+
+/* Style pour les messages d'erreur */
+.message {
+    color: red; /* Couleur du texte */
+    font-weight: bold; /* Texte en gras */
+}
+
+/* Style pour les labels */
+label {
+    display: block; /* Afficher les labels sur une nouvelle ligne */
+    margin-bottom: 5px; /* Ajouter de l'espace en bas du label */
+}
+
+/* Style pour les champs de formulaire */
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Largeur maximale */
+    padding: 10px; /* Ajouter de l'espace à l'intérieur du champ */
+    margin-bottom: 10px; /* Ajouter de l'espace en bas du champ */
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 5px; /* Arrondir les coins */
+    box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur */
+}
+
+/* Style pour le bouton de soumission */
+button[type="submit"] {
+    background-color: #007bff; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Ajouter de l'espace à l'intérieur du bouton */
+    border: none; /* Supprimer la bordure */
+    border-radius: 5px; /* Arrondir les coins */
+    cursor: pointer; /* Ajouter un curseur au survol */
+    text-decoration: none; /* Supprimer la décoration du texte */
+    transition: background-color 0.3s; /* Ajouter une transition en cas de changement de couleur */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+/* Réinitialisation des styles du formulaire */
+form {
+    margin: 0;
+    padding: 0;
+}
+
+    }
+   </style>
+  

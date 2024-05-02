@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<h1>S'enregister ici</h1>
+{% for message in messages %}
+<strong>{{message}}</strong>
+
+{% endfor %}
+
+
+<form method="post" action="/register">
+       {% csrf_token %}
+    <label for="username">username</label>
+    <input type="text" name="username" id="username" placeholder="Enter ton username" required>
+    <br><br>
+    <label for="firstname">firstname</label>
+    <input type="text" name="firstname" id="firstname" placeholder="Enter ton firstname" required>
+    <br><br>
+    <label for="lastname">lastname</label>
+    <input type="text" name="lastname" id="lastname" placeholder="Enter ton lastname" required>
+    <br><br>
+    <label for="Email">Email</label>
+    <input type="email" name="email" id="Email" placeholder="Enter ton Email" required>
+    <br><br>
+    <label for="password" >password</label>
+    <input type="password" name="password" id="password" placeholder="Enter ton password" required>
+    <br><br>
+    <label for="password1">password1</label>
+    <input type="password" name="password1" id="password1" placeholder="Enter ton password confirme" required>
+    <br><br>
+    <button type="submit" style="background-color: chartreuse;">Enregister</button>
+</form>
+
+{% endblock %}
+<!-- CSS -->
+   <style>
+    *{
+        /* Styles généraux */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Changer la police selon vos préférences */
+    background-color: #f0f0f0; /* Couleur de fond */
+}
+
+/* Style pour le contenu à l'intérieur du block */
+.block-content {
+    margin-top: 20px; /* Ajouter de l'espace en haut du contenu */
+    padding: 20px; /* Ajouter de l'espace autour du contenu */
+    background-color: #fff; /* Couleur de fond pour le contenu */
+    border-radius: 10px; /* Arrondir les coins */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajouter une ombre */
+}
+
+/* Style pour les titres */
+h1 {
+    font-size: 20px; /* Taille de la police */
+    margin-bottom: 20px; /* Ajouter de l'espace en bas du titre */
+}
+
+/* Style pour les messages */
+.message {
+    color: #ff0000; /* Couleur du texte */
+    font-weight: bold; /* Mettre en gras */
+}
+
+/* Style pour les étiquettes des champs de formulaire */
+label {
+    display: block; /* Afficher sur une ligne séparée */
+    margin-bottom: 5px; /* Ajouter de l'espace en bas */
+}
+
+/* Style pour les champs de formulaire */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Prendre toute la largeur disponible */
+    padding: 10px; /* Ajouter de l'espace à l'intérieur */
+    margin-bottom: 10px; /* Ajouter de l'espace en bas */
+    border: 1px solid #ccc; /* Ajouter une bordure */
+    border-radius: 5px; /* Arrondir les coins */
+    box-sizing: border-box; /* Inclure la bordure dans la largeur totale */
+}
+
+/* Style pour le bouton de soumission */
+button[type="submit"] {
+    background-color: #007bff; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Ajouter de l'espace à l'intérieur du bouton */
+    border: none; /* Supprimer la bordure */
+    border-radius: 5px; /* Arrondir les coins */
+    cursor: pointer; /* Ajouter un curseur au survol */
+    transition: background-color 0.3s; /* Ajouter une transition en cas de changement de couleur */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+    }
+   </style>
